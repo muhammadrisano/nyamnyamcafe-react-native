@@ -2,7 +2,7 @@ const globalState = {
     token: sessionStorage.getItem('token') || null,
     id_user: sessionStorage.getItem('id_user') || 1,
     role_id: sessionStorage.getItem('role_id') || null,
-    fullname: sessionStorage.getItem('fullname') || null,
+    fullname: sessionStorage.getItem('fullname') || "Muhammad Risano AKbar",
     userid: '',
     user: localStorage.getItem('user'),
     isLoading: false,

@@ -1,28 +1,21 @@
 import axios from 'axios';
-export const getsound = () => {
+
+
+export const checkoutpayment = (id_user) => {
     return {
 
-        type: 'GET_SOUND',
-        payload: axios.get('http://titaktitak.muhammadrisano.online/button', {
-            headers: { "authorization": "jangan-coba-coba" },
-        }),
-    };
-};
-export const deletesound = (id_sound) => {
-    return {
-
-        type: 'DELETE_SOUND',
-        payload: axios.delete('http://titaktitak.muhammadrisano.online/button/' + id_sound, {
+        type: 'PAYMENT_CHECKOUT',
+        payload: axios.post('http://localhost:4000/payment/start/' + id_user, {}, {
             headers: { "authorization": "jangan-coba-coba" },
         }),
     };
 };
 
-export const addsound = (data) => {
+export const getAllPayment = () => {
     return {
 
-        type: 'ADD_SOUND',
-        payload: axios.post('http://localhost:4000/button', data, {
+        type: 'GETALL_PAYMENT',
+        payload: axios.get('http://localhost:4000/payment/', {
             headers: { "authorization": "jangan-coba-coba" },
         }),
     };

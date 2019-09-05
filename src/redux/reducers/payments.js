@@ -1,9 +1,14 @@
 const globalState = {
 
-    datasound: [],
+    checkout: null,
     isLoading: false,
     isFulfilled: false,
-    isRejected: false
+    isRejected: false,
+    paymentall:[],
+    ppn: null,
+    total_price: null,
+    total_payment: null,
+    id_payment: null
 
 };
 
@@ -13,63 +18,49 @@ const payments = (state = globalState, action) => {
 
 
     switch (action.type) {
-        case 'GET_SOUND_PENDING':
+        case 'PAYMENT_CHECKOUT_PENDING':
             return {
                 ...state,
                 isLoading: true,
                 isFulfilled: false,
                 isRejected: false,
             };
-        case 'GET_SOUND_REJECTED':
+        case 'PAYMENT_CHECKOUT_REJECTED':
             return {
                 ...state,
                 isLoading: false,
                 isRejected: true,
             };
-        case 'GET_SOUND_FULFILLED':
+        case 'PAYMENT_CHECKOUT_FULFILLED':
             return {
                 ...state,
                 isLoading: false,
                 isFulfilled: true,
-                datasound: action.payload.data.result
+                checkout: action.payload.data.result,
+                ppn: action.payload.data.result.ppn,
+                total_price: action.payload.data.result.total_price,
+                total_payment: action.payload.data.result.total_payment,
+                id_payment: action.payload.data.result.id_payment
             };
-        case 'DELETE_SOUND_PENDING':
+            case 'GETALL_PAYMENT_PENDING':
             return {
                 ...state,
                 isLoading: true,
                 isFulfilled: false,
                 isRejected: false,
             };
-        case 'DELETE_SOUND_REJECTED':
+        case 'GETALL_PAYMENT_REJECTED':
             return {
                 ...state,
                 isLoading: false,
                 isRejected: true,
             };
-        case 'DELETE_SOUND_FULFILLED':
+        case 'GETALL_PAYMENT_FULFILLED':
             return {
                 ...state,
                 isLoading: false,
                 isFulfilled: true,
-            };
-        case 'ADD_SOUND_PENDING':
-            return {
-                ...state,
-                isLoading: true,
-                isFulfilled: false,
-                isRejected: false,
-            };
-        case 'ADD_SOUND_REJECTED':
-            return {
-                ...state,
-                isLoading: false,
-                isRejected: true,
-            };
-        case 'ADD_SOUND_FULFILLED':
-            return {
-                ...state,
-                isLoading: false,
-                isFulfilled: true,
+                paymentall: action.payload.data.result,
             };
         default:
             return state;
