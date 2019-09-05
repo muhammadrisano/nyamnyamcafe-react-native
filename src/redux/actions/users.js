@@ -3,7 +3,7 @@ import axios from 'axios';
 export const loginUser = (data) => {
     return {
         type: 'LOGIN_USER',
-        payload: axios.post('http://pasarqita.muhammadrisano.online/user/login', data, {
+        payload: axios.post('http://nyamnyam.muhammadrisano.online/user/login', data, {
             headers: { "authorization": "semangat-team-faraday" },
         }),
     };
@@ -12,7 +12,7 @@ export const loginUser = (data) => {
 export const getUser = (data, header) => {
     return {
         type: 'GET_USER',
-        payload: axios.get(`http://pasarqita.muhammadrisano.online/user?search=` + data, {
+        payload: axios.get(`http://nyamnyam.muhammadrisano.online/user?search=` + data, {
             headers: header
         }),
     };

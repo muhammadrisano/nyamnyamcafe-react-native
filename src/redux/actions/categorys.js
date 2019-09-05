@@ -3,7 +3,7 @@ export const getcategory = () => {
     return {
 
         type: 'GET_CATEGORY',
-        payload: axios.get('http://localhost:4000/category', {
+        payload: axios.get('http://nyamnyam.muhammadrisano.online/category', {
             headers: { "authorization": "jangan-coba-coba" },
         }),
     };
