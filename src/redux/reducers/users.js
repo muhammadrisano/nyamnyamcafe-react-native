@@ -36,7 +36,7 @@ const users = (state = globalState, action) => {
                 token: action.payload.data.result.token,
                 id_user: action.payload.data.result.id_user,
                 role_id: action.payload.data.result.role_id,
-                fullname: action.payload.data.result.fullname,
+                fullname: action.payload.data.result.name,
             };
         case 'GET_USER_iD_PENDING':
             return {

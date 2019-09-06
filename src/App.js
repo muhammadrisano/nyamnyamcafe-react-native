@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom'
-// import Login from '../src/Screens/Login'
+import Login from '../src/screens/login/Login'
 import Home from '../src/screens/home/Home'
 // import Prosesdelivery from '../src/Screens/Prosesdelivery'
 // import Waitdelivery from '../src/Screens/Waitdelivery'
@@ -14,8 +14,8 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Redirect exact from="/" to="/home" />
-            {/* <Route path='/login' exact component={Login} /> */}
+            <Redirect exact from="/" to="/login" />
+            <Route path='/login' exact component={Login} />
             <Route path='/home' exact component={Home} />
             {/* <Route path='/waiting' exact component={Waitdelivery} /> */}
           </Switch>

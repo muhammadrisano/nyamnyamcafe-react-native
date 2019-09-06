@@ -4,7 +4,7 @@ export const loginUser = (data) => {
     return {
         type: 'LOGIN_USER',
         payload: axios.post('http://nyamnyam.muhammadrisano.online/user/login', data, {
-            headers: { "authorization": "semangat-team-faraday" },
+            headers: { "authorization": "jangan-coba-coba" },
         }),
     };
 };
